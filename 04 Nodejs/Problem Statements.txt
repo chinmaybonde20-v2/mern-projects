@@ -1,0 +1,24 @@
+3.MongoDB :
+To-Do List: Create a simple to-do list application where users can add, edit, and delete tasks. Use MongoDB to store tasks with fields like task name, descriptio3.n, and completion status.
+
+Blog: Develop a basic blogging platform where users can create, read, update, and delete blog posts. Each post can be stored as a document in MongoDB with fields like title, content, author, and timestamp.
+------------------------------------
+
+4.Express.js:
+Contact Form: Build a contact form backend that accepts POST requests with user inquiries (name, email, message). Use Express.js to handle form submissions and store contact entries in MongoDB.
+
+RESTful API:Create a RESTful API for managing a collection of books, including endpoints for CRUD operations (Create, Read, Update, Delete). Use Express.js to define routes and MongoDB for data storage.
+------------------------------------
+
+5.React.js:
+Task Manager: Develop a task management application where users can view, add, edit, and delete tasks. Use React.js to build a frontend interface with components for displaying tasks and interacting with them.
+
+Weather App: Create a weather application that fetches weather data from an API (e.g., OpenWeatherMap) and displays it to the user. Use React.js to build a simple UI for entering the location and viewing the weather forecast.
+------------------------------------
+
+6.Node.js:
+Authentication System: Implement a basic authentication system with Node.js, including user sign-up, login, and logout functionality. Use JSON Web Tokens (JWT) for authentication and MongoDB for storing user credentials securely.
+
+File Uploader: Build a file uploading backend with Node.js that allows users to upload images or documents. Use packages like multer to handle file uploads and MongoDB to store file metadata.
+
+------------------------------------
