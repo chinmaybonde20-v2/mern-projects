@@ -1,10 +1,10 @@
-import { TaskManager } from "./components/TaskManager";
-import { Example } from "./components/Example";
+import { TaskList } from "./components/TaskList";
+import "../src/assets/css/style.css";
 export const App = () => {
   return (
     <div>
-      {/* <TaskManager /> */}
-      <Example />
+      <h1>Task Manager App</h1>
+      <TaskList />
     </div>
   );
 };

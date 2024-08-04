@@ -1,20 +1,19 @@
+using express js
+
 import express from "express";
 import multer from "multer";
 import mongoose from "mongoose";
 import path from "path";
 import fs from "fs";
 
-// Initialize Express
 const app = express();
 const port = 3000;
 
-// Create uploads directory if it doesn't exist
 const uploadDir = path.join(__dirname, "uploads");
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir);
 }
 
-// MongoDB Connection
 mongoose
   .connect(
     "mongodb+srv://chinmaybondev2:Cccccccc20@mern-task-manager.xliyls0.mongodb.net/file-manager"
@@ -22,7 +21,6 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log("MongoDB connection error:", err));
 
-// Define a schema and model for storing image metadata
 const imageSchema = new mongoose.Schema({
   filename: String,
   path: String,
@@ -30,7 +28,6 @@ const imageSchema = new mongoose.Schema({
 });
 const Image = mongoose.model("Image", imageSchema);
 
-// Configure Multer for file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, uploadDir);
@@ -41,7 +38,6 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// Middleware to handle file uploads and save metadata
 app.post("/upload", upload.single("image"), async (req, res) => {
   if (!req.file) {
     console.log("Upload failed: No file uploaded");
@@ -64,7 +60,6 @@ app.post("/upload", upload.single("image"), async (req, res) => {
   }
 });
 
-// Start the server
 app.listen(port, () => {
   console.log(Server running at http://localhost:${port});
 });
