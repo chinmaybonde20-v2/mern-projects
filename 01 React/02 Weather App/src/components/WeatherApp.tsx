@@ -29,6 +29,7 @@ export const WeatherApp = () => {
   useEffect(() => {
     searchCity(currCity);
   }, [currCity]);
+
   const searchCity = async (city: string) => {
     try {
       const response = await axios.get(
@@ -51,7 +52,7 @@ export const WeatherApp = () => {
   };
 
   return (
-    <div>
+    <div className="weather-app">
       <h1>Weather App</h1>
       <hr />
       <div>
@@ -85,19 +86,23 @@ export const WeatherApp = () => {
       {weatherInfo && (
         <div className="weatherCard">
           <h1>Result:</h1>
-          <h3>City: {weatherInfo.name}</h3>
-          <h2>Temperature: {weatherInfo.main.temp}</h2>
-          <h2>Max Temperature: {weatherInfo.main.temp_max}</h2>
-          <h2>Min Temperature: {weatherInfo.main.temp_min}</h2>
-          <h2>Humidity: {weatherInfo.main.humidity}</h2>
-          <h2>
-            Sunrise:{" "}
-            {new Date(weatherInfo.sys.sunrise * 1000).toLocaleTimeString()}
-          </h2>
-          <h2>
-            Sunset:{" "}
-            {new Date(weatherInfo.sys.sunset * 1000).toLocaleTimeString()}
-          </h2>
+          <div className="weather-info">
+            <div className="temperature">{weatherInfo.main.temp}°C</div>
+            <div>City: {weatherInfo.name}</div>
+            <div>Max Temperature: {weatherInfo.main.temp_max}°C</div>
+            <div>Min Temperature: {weatherInfo.main.temp_min}°C</div>
+            <div className="humidity">
+              Humidity: {weatherInfo.main.humidity}%
+            </div>
+            <div className="time">
+              Sunrise:{" "}
+              {new Date(weatherInfo.sys.sunrise * 1000).toLocaleTimeString()}
+            </div>
+            <div className="time">
+              Sunset:{" "}
+              {new Date(weatherInfo.sys.sunset * 1000).toLocaleTimeString()}
+            </div>
+          </div>
         </div>
       )}
     </div>
